@@ -7,6 +7,8 @@ const main = async() => {
         const repo = core.getInput('repo', { required: true });
         const token = core.getInput('token', { required: true });
         const filePath = 'https://github.com/schauhan-2/k8s.manifests-sync-action/blob/main/README.md'
+        const context = github.context;
+        const message = 'This is made by the action bot.'
 
         const octokit = new github.getOctokit({
             auth: token
@@ -21,6 +23,12 @@ const main = async() => {
             }
           })
         
+          const new_comment = octokit.issues.createComment({
+            ...context.repo,
+            issue_number: 1,
+            body: message
+        });
+         
     } catch (error) {
       core.setFailed(error.message);
     }
