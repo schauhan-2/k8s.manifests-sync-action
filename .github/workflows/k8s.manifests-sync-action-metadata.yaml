@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Aaaah
     steps:
-      - name: Annotate PR
-        uses: link-/k8s.manifests-sync-action@main
+      - name: Running index.js file maybe...
+        uses: https://github.com/schauhan-2/k8s.manifests-sync-action@main
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
