@@ -1,0 +1,15 @@
+name: 'k8.manifest-sync-action'
+description: 'Syncs k8s manifest files whenever a push edits the evn....'
+inputs:
+  owner:
+    description: 'The owner of the repository'
+    required: true
+  repo:
+    description: 'The name of the repository'
+    required: true
+  token:
+    description: 'The token to use to access the GitHub API'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
