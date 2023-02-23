@@ -23,11 +23,15 @@ const main = async() => {
             }
           })
         
+        console.log("Hello")
+
           const new_comment = octokit.issues.createComment({
             ...context.repo,
             issue_number: 1,
             body: message
         });
+
+        console.log("Jello")
          
     } catch (error) {
       core.setFailed(error.message);
