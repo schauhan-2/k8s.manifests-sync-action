@@ -25,7 +25,7 @@ const main = async() => {
         
         console.log("Hello")
 
-          const new_comment = octokit.issues.createComment({
+        const new_comment = octokit.issues.createComment({
             ...context.repo,
             issue_number: 1,
             body: message
@@ -37,3 +37,5 @@ const main = async() => {
       core.setFailed(error.message);
     }
 }
+
+main();
