@@ -27,7 +27,7 @@ const main = async() => {
 
         const new_comment = octokit.issues.createComment({
             ...context.repo,
-            issue_number: 1,
+            issue_number: context.payload.issue_number,
             body: message
         });
 
