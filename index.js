@@ -1,11 +1,15 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
+const { createActionAuth } = require("@octokit/auth-action");
 
 const main = async() => {
     try {
+        const auth = createActionAuth();
+        const authentication = await auth();
+
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
-        const token = core.getInput('token', { required: true });
+        const token = authentication //core.getInput('token', { required: true });
         const filePath = 'https://github.com/schauhan-2/k8s.manifests-sync-action/blob/main/README.md'
         const context = github.context;
         const message = 'This is made by the action bot.'

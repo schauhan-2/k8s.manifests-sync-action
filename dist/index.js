@@ -9597,6 +9597,14 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+/***/ 4242:
+/***/ ((module) => {
+
+module.exports = eval("require")("@octokit/auth-action");
+
+
+/***/ }),
+
 /***/ 1690:
 /***/ ((module) => {
 
@@ -9776,12 +9784,16 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(4550)
 const github = __nccwpck_require__(1805)
+const { createActionAuth } = __nccwpck_require__(4242);
 
 const main = async() => {
     try {
+        const auth = createActionAuth();
+        const authentication = await auth();
+
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
-        const token = core.getInput('token', { required: true });
+        const token = authentication //core.getInput('token', { required: true });
         const filePath = 'https://github.com/schauhan-2/k8s.manifests-sync-action/blob/main/README.md'
         const context = github.context;
         const message = 'This is made by the action bot.'
