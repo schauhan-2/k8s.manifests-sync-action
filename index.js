@@ -7,7 +7,7 @@ const main = async() => {
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
         const token = core.getInput('token', { required: true });
-        const filePath = 'https://github.com/schauhan-2/k8s.manifests-sync-action/blob/main/README.md'
+        const filePath = 'https://github.com/schauhan-2/k8s.manifests-sync-action/blob/f13afadecad8ec77f6f2c03d539430023d93df9d/README.md'
         const context = github.context;
         const message = 'This is made by the action bot.'
 
