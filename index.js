@@ -22,15 +22,8 @@ const main = async() => {
             }
           });
         
-        console.log("Hello");
+        console.log(commitList);
 
-        const new_comment = octokit.issues.createComment({
-            ...context.repo,
-            issue_number: context.payload.issue_number,
-            body: message
-        });
-
-        console.log("Jello");
          
     } catch (error) {
       core.setFailed(error.message);
