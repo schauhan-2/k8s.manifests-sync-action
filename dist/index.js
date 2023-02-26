@@ -9787,9 +9787,7 @@ const main = async() => {
         const context = github.context;
         const message = 'This is made by the action bot.'
 
-        const octokit = new github.getOctokit({
-            auth: token
-          })
+        const octokit = new github.getOctokit(token);
 
         let commitList = await octokit.request('GET /repos/{owner}/{repo}/commits?path={filePath}', {
             owner: owner,
@@ -9798,9 +9796,9 @@ const main = async() => {
             headers: {
               'X-GitHub-Api-Version': '2022-11-28'
             }
-          })
+          });
         
-        console.log("Hello")
+        console.log("Hello");
 
         const new_comment = octokit.issues.createComment({
             ...context.repo,
@@ -9808,7 +9806,7 @@ const main = async() => {
             body: message
         });
 
-        console.log("Jello")
+        console.log("Jello");
          
     } catch (error) {
       core.setFailed(error.message);
