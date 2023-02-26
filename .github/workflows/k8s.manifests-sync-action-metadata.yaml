@@ -3,10 +3,9 @@ name: Test annotation
 on: 
   pull_request:
     types: [opened, reopened, synchronize]
-
+    
 jobs:
-
-  annotate-pr:
+  job1:
     runs-on: ubuntu-latest
     name: anything  
     steps:
