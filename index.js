@@ -4,9 +4,6 @@ const { createActionAuth } = require("@octokit/auth-action");
 
 const main = async() => {
     try {
-        const auth = createActionAuth();
-        const authentication = await auth();
-
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
         const token = authentication //core.getInput('token', { required: true });
