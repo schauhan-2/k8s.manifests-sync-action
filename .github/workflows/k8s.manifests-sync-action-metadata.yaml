@@ -8,11 +8,11 @@ jobs:
 
   annotate-pr:
     runs-on: ubuntu-latest
-    name: Aaaah
+    name: anything  
     steps:
       - name: Running index.js file maybe...
         uses: schauhan-2/k8s.manifests-sync-action@main
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
-          token: ${{ secrets.TEST_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
