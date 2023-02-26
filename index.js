@@ -22,7 +22,11 @@ const main = async() => {
             }
           });
         
-        console.log(commitList);
+        commitList['data'].forEach( async commit => {
+          let shaList = commit['sha'];
+          console.log(shaList);
+          console.log("=====");
+        });
 
          
     } catch (error) {
